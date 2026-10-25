@@ -115,7 +115,7 @@ pipeline {
                               --retry 10 --retry-delay 3 \
                               "http://$HOST/health"
                             echo
-                        done                        }
+                        done                       
                     '''
                 }
             }
