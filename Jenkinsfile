@@ -109,11 +109,13 @@ pipeline {
                         done
 
                         for HOST in "$APP1_HOST" "$APP2_HOST"; do
-                            curl --fail --retry 10 --retry-delay 3 \
+                            echo "Checking health of $HOST"
+
+                            curl --fail --silent --show-error \
+                              --retry 10 --retry-delay 3 \
                               "http://$HOST/health"
-                        done
-        "http://$HOST/health"
-                        }
+                            echo
+                        done                        }
                     '''
                 }
             }
