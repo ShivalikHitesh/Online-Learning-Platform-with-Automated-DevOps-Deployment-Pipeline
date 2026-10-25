@@ -112,7 +112,6 @@ pipeline {
                             curl --fail --retry 10 --retry-delay 3 \
                               "http://$HOST/health"
                         done
-                    '''
-                }
-            }
-        }
+                            }
+         }
+    }
