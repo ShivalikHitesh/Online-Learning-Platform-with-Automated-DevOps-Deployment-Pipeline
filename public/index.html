@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LearnSphere - Online Learning Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      color: #14213d;
+    }
+    header {
+      background: #14213d;
+      color: white;
+      padding: 24px 8%;
+    }
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 24px;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      margin: 18px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #00000010;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result {
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LearnSphere</h1>
+    <p>Learn new skills. Explore courses. Build your future.</p>
+  </header>
+
+  <main>
+    <h2>Welcome to your online learning platform</h2>
+    <div class="card">
+      <h3>Cloud Computing</h3>
+      <p>Learn cloud fundamentals, infrastructure, and security.</p>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Explore HTML, CSS, and application development.</p>
+    </div>
+    <div class="card">
+      <h3>Data Analytics</h3>
+      <p>Discover data analysis and practical problem-solving.</p>
+    </div>
+    <div class="card">
+      <h3>Database Connectivity Test</h3>
+      <button onclick="checkDatabase()">Check PostgreSQL</button>
+      <pre id="result">Not checked yet.</pre>
+    </div>
+  </main>
+
+  <script>
+    async function checkDatabase() {
+      const output = document.getElementById("result");
+      output.textContent = "Checking database...";
+      try {
+        const response = await fetch("/api/db-check");
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        output.textContent = "Request failed: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

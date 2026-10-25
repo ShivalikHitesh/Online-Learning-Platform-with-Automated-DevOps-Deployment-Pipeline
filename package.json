@@ -1,0 +1,15 @@
+{
+  "name": "learnsphere",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online Learning Platform DevOps project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node --check app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
