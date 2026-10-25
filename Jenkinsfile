@@ -9,8 +9,8 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'knighthitesh/learnsphere'
-        APP1_HOST  = 13.206.120.196
-        APP2_HOST  = 3.108.67.108
+        APP1_HOST  = '13.206.120.196'
+        APP2_HOST  = '3.108.67.108'
     }
 
     stages {
